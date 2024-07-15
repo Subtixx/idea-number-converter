@@ -1,0 +1,23 @@
+<idea-plugin require-restart="true">
+    <idea-version since-build="233.11799.241"/>
+    <description><![CDATA[
+ A handy IntelliJ IDEA plugin that enhances your coding experience by providing on-the-fly number conversion information.
+]]></description>
+    <version>2024.1.0</version>
+    <name>Number Converter</name>
+    <id>de.ithock.idea.number_convert</id>
+    <vendor email="support@it-hock.de" url="https://it-hock.de">IT-Hock</vendor>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <editorFactoryMouseMotionListener implementation="de.ithock.idea.number_convert.HoverNumberConverterListener"/>
+    </extensions>
+    <actions>
+        <action id="de.ithock.idea.number_convert.action.toggle"
+                class="de.ithock.idea.number_convert.HoverNumberConverterToggleAction"
+                text="Toggle Hover Number Conversion"
+                description="Toggle hover number conversion">
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
